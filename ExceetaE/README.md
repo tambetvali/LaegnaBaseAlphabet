@@ -1,1 +1,2 @@
-
+These versions of Z, X, Y project to absolute exterior, absolute infinity of womanly view: when whole Z=>X=>Y is reflected outwards, like Z and Y reflect X.
+- This is not very much needed for plain math because if it's not metaextension, such values are rather in known system projections, but if it's a special value it's sometimes useful to talk about flat infinities projected in their own terms, as "center" of your system rather than edges.
