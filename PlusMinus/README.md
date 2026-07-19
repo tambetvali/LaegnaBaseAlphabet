@@ -1,3 +1,5 @@
+![SignsOfSystems](SignsOfSystems.png)
+
 # Laegna Signs
 
 Laegna has four primary signs:
