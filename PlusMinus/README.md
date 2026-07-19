@@ -8,6 +8,8 @@ Laegna has four primary signs:
 - A - Addition sign "posi", equals "plus". Positive. Degree 2.
 - E - Multiplication sign "pose", equals "minus" for second octave - first integral. Superpositive. Degree 3.
 
+![SignsOfSystemsRound](SignsOfSystemsRound.png)
+
 Laegna number space:
 - Measures coordinates as square-compressed circles in sphere space, with enough dimensions to contain it's shape.
   - This equals to angle compression near infinity (symmetric to E, I - plus/minus) towards finite view (symmetric to A, O - plus/minus).
