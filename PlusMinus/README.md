@@ -35,7 +35,3 @@ In this equation, one thing can be noticed:
   - We see both it's speed and travel touch certain bubble as if it was infinity.
 
 ---
-
-Map that functions can run straight up and straight down; 18 system even allows to display some backwards, altough reverse-forward might project it's growth better (growth X, not direcion-magnitude-X which *shifts* the channels and projects nicely backwards):
-
-![SignsAndDegrees](SignsAndDegrees.png)
