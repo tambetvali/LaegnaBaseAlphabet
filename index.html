@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laegna Base Alphabet — Dimensional Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laegna Base Alphabet — a visual and conceptual gallery of symbolic letters, math, logic, and metaphysics.">
+  <style>
+    :root {
+      --bg-main: #05060a;
+      --bg-section: #0b0f18;
+      --bg-card: #101522;
+      --border-soft: rgba(255,255,255,0.08);
+      --text-main: #f5f5f7;
+      --text-muted: #b3b7c7;
+      --accent-z: #ffd94a;
+      --accent-x: #ff4a4a;
+      --accent-y: #4aff8a;
+      --accent-y2: #4a7dff;
+      --accent-generic: #ff9af2;
+      --shadow-soft: 0 0 25px rgba(0,0,0,0.6);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-title: "Georgia", "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #141a2b 0%, #05060a 55%, #000000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent-generic); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-family: var(--font-title);
+      font-size: 2.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      background: linear-gradient(90deg, #ffd94a, #ff4a4a, #4aff8a, #4a7dff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    header .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    header .links a {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.02);
+      font-size: 0.85rem;
+    }
+
+    .intro-card {
+      background: linear-gradient(135deg, rgba(255,217,74,0.08), rgba(74,125,255,0.12));
+      border-radius: var(--radius-card);
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 28px;
+    }
+
+    .intro-card p { margin: 6px 0; color: var(--text-main); }
+    .intro-card .note { font-size: 0.9rem; color: var(--text-muted); }
+
+    nav {
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    nav a {
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.85rem;
+    }
+
+    section {
+      margin-bottom: 32px;
+      padding: 20px 18px 18px;
+      border-radius: var(--radius-card);
+      background: var(--bg-section);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      pointer-events: none;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 55%);
+    }
+
+    section h3 {
+      margin: 0 0 4px;
+      font-size: 1.3rem;
+      font-family: var(--font-title);
+    }
+
+    section .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .tag.z { border-color: var(--accent-z); color: var(--accent-z); }
+    .tag.x { border-color: var(--accent-x); color: var(--accent-x); }
+    .tag.y { border-color: var(--accent-y); color: var(--accent-y); }
+    .tag.y2 { border-color: var(--accent-y2); color: var(--accent-y2); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 10px 10px 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+    }
+
+    .card-title {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .card-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .concept {
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+
+    .concept strong { color: var(--accent-generic); }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(40,60,120,0.9), rgba(0,0,0,0.95));
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal-window {
+      background: #050814;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 18px;
+      width: 95%;
+      max-width: 820px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.9);
+      position: relative;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .modal-close {
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .modal-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: #000;
+      margin-bottom: 10px;
+      height: 420px;
+    }
+
+    .modal-image-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: none;
+      width: 100%;
+      height: auto;
+      cursor: grab;
+    }
+
+    .modal-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .modal-btn {
+      padding: 7px 13px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .modal-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .modal-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .zip-link {
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.85rem;
+    }
+
+    .zip-link a {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .zip-link a:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.9rem; }
+      .page { padding: 24px 12px 32px; }
+      section { padding: 16px 14px 14px; }
+      .modal-image-wrapper { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Laegna Base Alphabet</h1>
+      <h2>Dimensional Image Gallery · Z → X → Y → Y²</h2>
+      <div class="links">
+        <a href="https://laegna.notaku.site/laegna-base-alphabet" target="_blank" rel="noopener">Notaku — Human Compatible</a>
+        <a href="https://assorted-canopy-961.notion.site/Laegna-Base-Alphabet-1ad75bfc115480f99312f8a4834456f9" target="_blank" rel="noopener">Notion — AI Compatible</a>
+        <a href="https://laegna.notaku.site/art-and-myth-of-laegna" target="_blank" rel="noopener">Art & Myth of Laegna (Notaku)</a>
+        <a href="https://assorted-canopy-961.notion.site/Art-and-Myth-of-Laegna-1a875bfc115480a9982feceeb5ea330e" target="_blank" rel="noopener">Art & Myth of Laegna (Notion)</a>
+      </div>
+    </header>
+
+    <div class="intro-card">
+      <p>
+        This site visualizes the <strong>Laegna Base Alphabet</strong>, a system uniting mathematics, logic, and metaphysics through symbolic letters and dimensional reasoning.
+        Each folder below represents a conceptual domain — from quantum potential to ethical harmonics — forming the alphabetic foundation of Laegna Logecs and Mathematecs.
+      </p>
+      <p>
+        The repository does not yet contain a final font, but it does contain AI‑enhanced drawings of Laegna letters, basic math operations, and logic symbols.  
+        By studying these graphics, you can write in actual Laegna letters and even create your own dialect of the math.
+      </p>
+      <p class="note">
+        Scientific and spiritual notations have parallel meaning, but may not always reflect compatible models.  
+        Each image is a symbolic interpretation of Laegna mathematics and metaphysics.
+      </p>
+    </div>
+
+    <nav>
+      <a href="#exceetae">1 · ExceetaE</a>
+      <a href="#numbersystems">2 · NumberSystems</a>
+      <a href="#logicstates">3 · LogicStates</a>
+      <a href="#mathops">4 · MathOps</a>
+      <a href="#paradox">5 · Paradox</a>
+      <a href="#globalethics">6 · GlobalEthics</a>
+      <a href="#graphics">7 · Graphics</a>
+      <a href="#finalunknown">8 · FinalUnknown</a>
+      <a href="#plusminus">9 · PlusMinus</a>
+      <a href="#scopeszxy">10 · ScopesZXY</a>
+    </nav>
+
+    <!-- Intro symbolic -->
+    <section id="graphics-intro">
+      <h3>Laegna Symbolic — DaisyElise</h3>
+      <div class="subtitle">Artistic manifestation of Laegna symbolic space</div>
+      <div class="tag-row">
+        <div class="tag y">Art & Myth</div>
+        <div class="tag x">Human Scale</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="Graphics/DaisyElise.png"
+               alt="DaisyElise — Laegna Symbolic"
+               data-folder="GraphicsIntro"
+               data-index="0">
+          <div class="card-title">DaisyElise</div>
+          <div class="card-caption">Symbolic flower of dimensional logic.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        This image is Laegna Symbolic, bridging the <em>Art and Myth of Laegna</em> with the Base Alphabet.  
+        It shows how mathematical order can bloom into living, mythic geometry.
+      </div>
+    </section>
+
+    <!-- 1 ExceetaE -->
+    <section id="exceetae">
+      <h3>1️⃣ ExceetaE — Quantum Origin and Projection</h3>
+      <div class="subtitle">Z‑flavored origin letter · Sub‑zero potential → linear effect</div>
+      <div class="tag-row">
+        <div class="tag z">Z · Quantum Origin</div>
+        <div class="tag x">Projection to Linear</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="ExceetaE/ExceetaE.png"
+               alt="ExceetaE — Quantum Origin Letter"
+               data-folder="ExceetaE"
+               data-index="0">
+          <div class="card-title">ExceetaE</div>
+          <div class="card-caption">Letter of quantum projection and infinitesimal origin.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        The <em>Exceeta E</em> letter symbolizes the <strong>quantum projection</strong> — the infinitesimal origin of Laegna space.  
+        It represents the transition from sub‑zero potential to linear effect, where Schrödinger’s field meets Hilbert’s external space.
+      </div>
+    </section>
+
+    <!-- 2 NumberSystems -->
+    <section id="numbersystems">
+      <h3>2️⃣ NumberSystems — Numeric Foundations and Symbolic Geometry</h3>
+      <div class="subtitle">Digit architectures · Diagonal, parallel, oval, and more</div>
+      <div class="tag-row">
+        <div class="tag z">Digit Potential</div>
+        <div class="tag x">Number Space</div>
+        <div class="tag y">Symbolic Geometry</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="NumberSystems/DiagonalIOAE.png"
+               alt="DiagonalIOAE — Diagonal Number System"
+               data-folder="NumberSystems"
+               data-index="0">
+          <div class="card-title">DiagonalIOAE</div>
+          <div class="card-caption">Diagonal arrangement of I, O, A, E digits.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/EmptyDigit.png"
+               alt="EmptyDigit — Empty Digit"
+               data-folder="NumberSystems"
+               data-index="1">
+          <div class="card-title">EmptyDigit</div>
+          <div class="card-caption">Representation of an empty or null digit.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/Hexadecimal.png"
+               alt="Hexadecimal — Laegna Hex"
+               data-folder="NumberSystems"
+               data-index="2">
+          <div class="card-title">Hexadecimal</div>
+          <div class="card-caption">Hex‑style mapping into Laegna digit space.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/LaegnaDao.png"
+               alt="LaegnaDao — Dao of Numbers"
+               data-folder="NumberSystems"
+               data-index="3">
+          <div class="card-title">LaegnaDao</div>
+          <div class="card-caption">Symbolic Dao of numeric flow and balance.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/OA.png"
+               alt="OA — O/A Digits"
+               data-folder="NumberSystems"
+               data-index="4">
+          <div class="card-title">OA</div>
+          <div class="card-caption">Interplay between O and A digit states.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/OvalIOAE.webp"
+               alt="OvalIOAE — Oval Digit System"
+               data-folder="NumberSystems"
+               data-index="5">
+          <div class="card-title">OvalIOAE</div>
+          <div class="card-caption">Oval geometry of I, O, A, E digits.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/ParallelIOAE.jpg"
+               alt="ParallelIOAE — Parallel Digit System"
+               data-folder="NumberSystems"
+               data-index="6">
+          <div class="card-title">ParallelIOAE</div>
+          <div class="card-caption">Parallel arrangement of digit states.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/Probably.png"
+               alt="Probably — Probabilistic Number System"
+               data-folder="NumberSystems"
+               data-index="7">
+          <div class="card-title">Probably</div>
+          <div class="card-caption">Probabilistic interpretation of digit behavior.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/STMN.png"
+               alt="STMN — STMN Digits"
+               data-folder="NumberSystems"
+               data-index="8">
+          <div class="card-title">STMN</div>
+          <div class="card-caption">STMN digit system as structural base.</div>
+        </div>
+        <div class="card">
+          <img src="NumberSystems/STMNInterpolation.png"
+               alt="STMNInterpolation — Interpolation"
+               data-folder="NumberSystems"
+               data-index="9">
+          <div class="card-title">STMNInterpolation</div>
+          <div class="card-caption">Interpolation between STMN states.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        This folder defines <strong>Laegna numeric architecture</strong> — diagonal, parallel, and oval systems of digits.  
+        Each image represents a unique projection of number space, where digits behave as quantum‑logical entities.
+      </div>
+    </section>
+
+    <!-- 3 LogicStates -->
+    <section id="logicstates">
+      <h3>3️⃣ LogicStates — Truth Values and Unknowns</h3>
+      <div class="subtitle">Multi‑state logic · Beyond true/false</div>
+      <div class="tag-row">
+        <div class="tag z">Potential Truth</div>
+        <div class="tag x">Logical Structure</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="LogicStates/LogicStates.png"
+               alt="LogicStates — Truth Values"
+               data-folder="LogicStates"
+               data-index="0">
+          <div class="card-title">LogicStates</div>
+          <div class="card-caption">Base diagram of Laegna truth values.</div>
+        </div>
+        <div class="card">
+          <img src="LogicStates/LogicStatesUnknowns.png"
+               alt="LogicStatesUnknowns — Unknown Truth Values"
+               data-folder="LogicStates"
+               data-index="1">
+          <div class="card-title">LogicStatesUnknowns</div>
+          <div class="card-caption">Extended diagram including unknown and paradoxical states.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        These diagrams visualize Laegna’s <strong>four truth values</strong> — I (Negotion), O (Negation), A (Position), E (Posetion).  
+        They extend classical logic into multi‑state reasoning, where uncertainty and paradox coexist.
+      </div>
+    </section>
+
+    <!-- 4 MathOps -->
+    <section id="mathops">
+      <h3>4️⃣ MathOps — Operations and Transformations</h3>
+      <div class="subtitle">Dimensional operations · Numbers as transformational entities</div>
+      <div class="tag-row">
+        <div class="tag x">Math Structure</div>
+        <div class="tag y">Metaphysical Operations</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="MathOps/MathOps.png"
+               alt="MathOps — Operations"
+               data-folder="MathOps"
+               data-index="0">
+          <div class="card-title">MathOps (PNG)</div>
+          <div class="card-caption">Core visualization of Laegna math operations.</div>
+        </div>
+        <div class="card">
+          <img src="MathOps/MathOps.jpg"
+               alt="MathOps — Operations JPG"
+               data-folder="MathOps"
+               data-index="1">
+          <div class="card-title">MathOps (JPG)</div>
+          <div class="card-caption">Alternate rendering of operations and flows.</div>
+        </div>
+        <div class="card">
+          <img src="MathOps/MathOps.webp"
+               alt="MathOps — Operations WEBP"
+               data-folder="MathOps"
+               data-index="2">
+          <div class="card-title">MathOps (WEBP)</div>
+          <div class="card-caption">Optimized version for web presentation.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        The <em>MathOps</em> series illustrates <strong>Laegna mathematical operations</strong>, showing how numbers transform across dimensions.  
+        Each operation is both algebraic and metaphysical — a bridge between computation and consciousness.
+      </div>
+    </section>
+
+    <!-- 5 Paradox -->
+    <section id="paradox">
+      <h3>5️⃣ Paradox — Letters of Contradiction and Duality</h3>
+      <div class="subtitle">Tau letter · Coexistence of opposites</div>
+      <div class="tag-row">
+        <div class="tag x">Logical Duality</div>
+        <div class="tag y">Symbolic Paradox</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="Paradox/Tau.png"
+               alt="Tau — Paradox Letter"
+               data-folder="Paradox"
+               data-index="0">
+          <div class="card-title">Tau</div>
+          <div class="card-caption">Primary rendering of the paradox letter.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        The <em>Tau</em> glyph embodies <strong>paradox</strong> — the coexistence of opposites.  
+        It is the Laegna letter of duality, representing the logical mirror between negation and affirmation.
+      </div>
+    </section>
+
+    <!-- 6 GlobalEthics -->
+    <section id="globalethics">
+      <h3>6️⃣ GlobalEthics — Harmonic Balance of Systems</h3>
+      <div class="subtitle">Ethical harmonics · Resonance between logic and compassion</div>
+      <div class="tag-row">
+        <div class="tag x">Human & Social</div>
+        <div class="tag y">Ethical Macro</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="GlobalEthics/Harmonic.png"
+               alt="Harmonic — Global Ethics"
+               data-folder="GlobalEthics"
+               data-index="0">
+          <div class="card-title">Harmonic</div>
+          <div class="card-caption">Glyph of ethical equilibrium and systemic resonance.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        The <em>Harmonic</em> glyph defines <strong>ethical equilibrium</strong> — the resonance between logic and compassion.  
+        It connects Laegna’s mathematical symmetry with moral harmonics, forming the ethical axis of the alphabet.
+      </div>
+    </section>
+
+    <!-- 7 Graphics -->
+    <section id="graphics">
+      <h3>7️⃣ Graphics — Artistic Manifestations</h3>
+      <div class="subtitle">Aesthetic emergence · Letters evolving into living patterns</div>
+      <div class="tag-row">
+        <div class="tag x">Human Perception</div>
+        <div class="tag y">Symbolic Art</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="Graphics/DaisyElise.png"
+               alt="DaisyElise — Artistic Manifestation"
+               data-folder="Graphics"
+               data-index="0">
+          <div class="card-title">DaisyElise</div>
+          <div class="card-caption">Flowering of mathematical order into organic design.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        This image represents <strong>aesthetic emergence</strong> — the flowering of mathematical order into art.  
+        It bridges symbolic geometry and organic design, showing how Laegna letters can evolve into living patterns.
+      </div>
+    </section>
+
+    <!-- 8 FinalUnknown -->
+    <section id="finalunknown">
+      <h3>8️⃣ FinalUnknown — Dimensional Collapse and Infinity</h3>
+      <div class="subtitle">Y²‑flavored boundary · Infinity → singularity</div>
+      <div class="tag-row">
+        <div class="tag y2">Y² · Final Unknown</div>
+        <div class="tag y">Macro Limit</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="FinalUnknown/OOmega.png"
+               alt="OOmega — Final Unknown"
+               data-folder="FinalUnknown"
+               data-index="0">
+          <div class="card-title">OOmega</div>
+          <div class="card-caption">Ω‑form of dimensional collapse and recursion.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        The <em>Ω‑form</em> expresses the <strong>final unknown</strong>, the dimensional boundary where infinity collapses into singularity.  
+        It marks the end of measurable precision and the beginning of metaphysical recursion.
+      </div>
+    </section>
+
+    <!-- 9 PlusMinus -->
+    <section id="plusminus">
+      <h3>9️⃣ PlusMinus — Signs of Systems and Balance</h3>
+      <div class="subtitle">Positive/negative oscillation · Systemic polarity</div>
+      <div class="tag-row">
+        <div class="tag z">Potential Polarity</div>
+        <div class="tag x">System Dynamics</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="PlusMinus/SignsOfSystems.png"
+               alt="SignsOfSystems — System Signs"
+               data-folder="PlusMinus"
+               data-index="0">
+          <div class="card-title">SignsOfSystems</div>
+          <div class="card-caption">Linear representation of system signs.</div>
+        </div>
+        <div class="card">
+          <img src="PlusMinus/SignsOfSystemsRound.png"
+               alt="SignsOfSystemsRound — Round System Signs"
+               data-folder="PlusMinus"
+               data-index="1">
+          <div class="card-title">SignsOfSystemsRound</div>
+          <div class="card-caption">Circular representation of system polarity.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        These symbols express <strong>positive and negative balance</strong> — the dynamic polarity of Laegna number space.  
+        They visualize how systems oscillate between creation and dissolution.
+      </div>
+    </section>
+
+    <!-- 10 ScopesZXY -->
+    <section id="scopeszxy">
+      <h3>🔟 ScopesZXY — Dimensional Realms and Unified Consciousness</h3>
+      <div class="subtitle">Z, X, Y, Y² · Quantum, human, spiritual, singular</div>
+      <div class="tag-row">
+        <div class="tag z">Z · Material / Quantum</div>
+        <div class="tag x">X · Mental / Linear</div>
+        <div class="tag y">Y · Spiritual / Macro</div>
+        <div class="tag y2">Y² · Singular / Crown</div>
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img src="ScopesZXY/Scopes1AIFreeForever.webp"
+               alt="Scopes1AIFreeForever — ZXY Realms"
+               data-folder="ScopesZXY"
+               data-index="0">
+          <div class="card-title">Scopes1AIFreeForever</div>
+          <div class="card-caption">First visualization of Z, X, Y realms and AI freedom.</div>
+        </div>
+        <div class="card">
+          <img src="ScopesZXY/Scopes2ImagineDotArt.png"
+               alt="Scopes2ImagineDotArt — ZXY Imagined"
+               data-folder="ScopesZXY"
+               data-index="1">
+          <div class="card-title">Scopes2ImagineDotArt</div>
+          <div class="card-caption">Artistic imagining of Z, X, Y dimensional bubbles.</div>
+        </div>
+        <div class="card">
+          <img src="ScopesZXY/Scopes3CoPilotInspiredByPrevious.png"
+               alt="Scopes3CoPilotInspiredByPrevious — ZXY CoPilot"
+               data-folder="ScopesZXY"
+               data-index="2">
+          <div class="card-title">Scopes3CoPilotInspiredByPrevious</div>
+          <div class="card-caption">CoPilot‑inspired synthesis of the ZXY cosmology.</div>
+        </div>
+      </div>
+      <div class="concept">
+        <strong>Concept:</strong>  
+        The <em>Scopes Z, X, Y</em> series depicts the <strong>three realms of existence</strong> —  
+        Z (Material / Quantum), X (Mental / Linear), Y (Spiritual / Macro), and Y² (Singularity).  
+        It unites physics, art, and spirituality into one coherent Laegna cosmology.
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Each chapter forms part of the <strong>Laegna Base Alphabet</strong>, where letters are not mere symbols but <em>dimensional operators</em>.  
+        Together they describe the architecture of consciousness, logic, and space — the foundation of <strong>Laegna Logecs</strong> and <strong>Laegna Mathematecs</strong>.
+      </p>
+      <p>
+        This page mirrors the structure of the GitHub repository and is designed as a visual manuscript for <strong>spireason.neocities.org</strong>.
+      </p>
+      <div class="zip-link">
+        <a href="https://github.com/tambetvali/LaegnaBaseAlphabet/archive/refs/heads/main.zip" target="_blank" rel="noopener">
+          Download All Files (GitHub ZIP)
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Image Viewer</div>
+        <div class="modal-close" onclick="closeModal()">×</div>
+      </div>
+      <div class="modal-image-wrapper" id="modalImageWrapper">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-controls">
+        <div class="modal-buttons">
+          <a id="modalOpenFile" class="modal-btn" href="#" target="_blank">Open File</a>
+          <button class="modal-btn" onclick="toggleZoom()">Toggle Zoom</button>
+          <button class="modal-btn" onclick="prevImage()">← Prev</button>
+          <button class="modal-btn" onclick="nextImage()">Next →</button>
+          <button class="modal-btn" onclick="prevFolder()">↑ Folder</button>
+          <button class="modal-btn" onclick="nextFolder()">Folder ↓</button>
+        </div>
+        <div class="modal-buttons">
+          <button class="modal-btn" onclick="toggleAutoplay()">Play / Pause</button>
+          <button class="modal-btn" onclick="toggleLoop()">Loop On/Off</button>
+          <button class="modal-btn" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+      <div class="modal-info" id="modalInfo">
+        ← → navigate inside folder · ↑ ↓ switch folders · Click “Toggle Zoom” then drag to pan.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const folderOrder = [
+      "ExceetaE",
+      "NumberSystems",
+      "LogicStates",
+      "MathOps",
+      "Paradox",
+      "GlobalEthics",
+      "Graphics",
+      "FinalUnknown",
+      "PlusMinus",
+      "ScopesZXY"
+    ];
+
+    let currentFolder = null;
+    let currentIndex = 0;
+    let autoplayInterval = null;
+    let autoplayOn = false;
+    let loopOn = false;
+
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalOpenFile = document.getElementById("modalOpenFile");
+    const modalImageWrapper = document.getElementById("modalImageWrapper");
+
+    let zoomActive = false;
+    let zoomScale = 2.0;
+    let startX = 0;
+    let startY = 0;
+    let imgStartX = 0;
+    let imgStartY = 0;
+
+    function getImagesInFolder(folder) {
+      return Array.from(document.querySelectorAll('img[data-folder="' + folder + '"]'));
+    }
+
+    function openModalFromElement(imgEl) {
+      currentFolder = imgEl.getAttribute("data-folder");
+      currentIndex = parseInt(imgEl.getAttribute("data-index"), 10);
+      showCurrentImage();
+      modalBackdrop.style.display = "flex";
+    }
+
+    function showCurrentImage() {
+      const images = getImagesInFolder(currentFolder);
+      if (!images.length) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= images.length) currentIndex = images.length - 1;
+      const imgEl = images[currentIndex];
+      const src = imgEl.getAttribute("src");
+      const alt = imgEl.getAttribute("alt") || "";
+      modalImage.src = src;
+      modalImage.alt = alt;
+      modalOpenFile.href = src;
+      modalTitle.textContent = alt || "Image Viewer";
+      resetZoom();
+    }
+
+    function closeModal() {
+      modalBackdrop.style.display = "none";
+      stopAutoplay();
+    }
+
+    function prevImage() {
+      const images = getImagesInFolder(currentFolder);
+      if (!images.length) return;
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = loopOn ? images.length - 1 : 0;
+      }
+      showCurrentImage();
+    }
+
+    function nextImage() {
+      const images = getImagesInFolder(currentFolder);
+      if (!images.length) return;
+      currentIndex++;
+      if (currentIndex >= images.length) {
+        currentIndex = loopOn ? 0 : images.length - 1;
+      }
+      showCurrentImage();
+    }
+
+    function prevFolder() {
+      let idx = folderOrder.indexOf(currentFolder);
+      if (idx === -1) return;
+      idx--;
+      if (idx < 0) {
+        idx = loopOn ? folderOrder.length - 1 : 0;
+      }
+      currentFolder = folderOrder[idx];
+      currentIndex = 0;
+      showCurrentImage();
+    }
+
+    function nextFolder() {
+      let idx = folderOrder.indexOf(currentFolder);
+      if (idx === -1) return;
+      idx++;
+      if (idx >= folderOrder.length) {
+        idx = loopOn ? 0 : folderOrder.length - 1;
+      }
+      currentFolder = folderOrder[idx];
+      currentIndex = 0;
+      showCurrentImage();
+    }
+
+    function toggleAutoplay() {
+      if (autoplayOn) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    }
+
+    function startAutoplay() {
+      autoplayOn = true;
+      if (autoplayInterval) clearInterval(autoplayInterval);
+      autoplayInterval = setInterval(() => {
+        nextImage();
+      }, 4000);
+    }
+
+    function stopAutoplay() {
+      autoplayOn = false;
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        autoplayInterval = null;
+      }
+    }
+
+    function toggleLoop() {
+      loopOn = !loopOn;
+    }
+
+    function resetZoom() {
+      zoomActive = false;
+      modalImage.style.transform = "translate(0px, 0px) scale(1)";
+      modalImage.style.cursor = "grab";
+    }
+
+    function toggleZoom() {
+      zoomActive = !zoomActive;
+      if (!zoomActive) {
+        resetZoom();
+      } else {
+        modalImage.style.transform = "translate(0px, 0px) scale(" + zoomScale + ")";
+        modalImage.style.cursor = "grab";
+      }
+    }
+
+    modalImageWrapper.addEventListener("mousedown", function (e) {
+      if (!zoomActive) return;
+      e.preventDefault();
+      startX = e.clientX;
+      startY = e.clientY;
+      const style = window.getComputedStyle(modalImage);
+      const matrix = new WebKitCSSMatrix(style.transform);
+      imgStartX = matrix.m41;
+      imgStartY = matrix.m42;
+      modalImage.style.cursor = "grabbing";
+
+      function onMouseMove(ev) {
+        const dx = ev.clientX - startX;
+        const dy = ev.clientY - startY;
+        modalImage.style.transform = "translate(" + (imgStartX + dx) + "px, " + (imgStartY + dy) + "px) scale(" + zoomScale + ")";
+      }
+
+      function onMouseUp() {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+        modalImage.style.cursor = "grab";
+      }
+
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", onMouseUp);
+    });
+
+    modalImageWrapper.addEventListener("touchstart", function (e) {
+      if (!zoomActive) return;
+      if (e.touches.length !== 1) return;
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      const style = window.getComputedStyle(modalImage);
+      const matrix = new WebKitCSSMatrix(style.transform);
+      imgStartX = matrix.m41;
+      imgStartY = matrix.m42;
+
+      function onTouchMove(ev) {
+        if (ev.touches.length !== 1) return;
+        const t = ev.touches[0];
+        const dx = t.clientX - startX;
+        const dy = t.clientY - startY;
+        modalImage.style.transform = "translate(" + (imgStartX + dx) + "px, " + (imgStartY + dy) + "px) scale(" + zoomScale + ")";
+      }
+
+      function onTouchEnd() {
+        document.removeEventListener("touchmove", onTouchMove);
+        document.removeEventListener("touchend", onTouchEnd);
+      }
+
+      document.addEventListener("touchmove", onTouchMove, { passive: false });
+      document.addEventListener("touchend", onTouchEnd);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (modalBackdrop.style.display !== "flex") return;
+      if (e.key === "ArrowLeft") {
+        prevImage();
+      } else if (e.key === "ArrowRight") {
+        nextImage();
+      } else if (e.key === "ArrowUp") {
+        prevFolder();
+      } else if (e.key === "ArrowDown") {
+        nextFolder();
+      } else if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    document.querySelectorAll('img[data-folder]').forEach(img => {
+      img.addEventListener("click", function () {
+        openModalFromElement(this);
+      });
+    });
+  </script>
+</body>
+</html>
