@@ -98,8 +98,6 @@ Each image represents a unique projection of number space, where digits behave a
 
 ## 8️⃣ Paradox — Letters of Contradiction and Duality
 ![Tau](Paradox/Tau.png)
-![TauAlt](Paradox/Tau.jpg)
-![TauWeb](Paradox/Tau.webp)
 
 **Concept:**  
 The *Tau* glyph embodies **paradox** — the coexistence of opposites.  
