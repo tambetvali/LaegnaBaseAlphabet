@@ -69,8 +69,6 @@ They extend classical logic into multi‑state reasoning, where uncertainty and 
 
 ## 6️⃣ MathOps — Operations and Transformations
 ![MathOps](MathOps/MathOps.png)
-![MathOpsAlt](MathOps/MathOps.jpg)
-![MathOpsWeb](MathOps/MathOps.webp)
 
 **Concept:**  
 The *MathOps* series illustrates **Laegna mathematical operations**, showing how numbers transform across dimensions.  
